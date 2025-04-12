@@ -1,66 +1,109 @@
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakon</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #000000;
-        color: #FFFFFF;
-        margin: 0;
-        padding: 0;
-      }
-      a {
-        color: #00CED1; /* Dark Turquoise */
-        text-decoration: none;
-      }
-      a:hover {
-        color: #FFD700; /* Gold */
-      }
-      .top-right {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 2em;
-      }
-      .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-      }
-      .overlay-content {
-        background-color: #333333;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-      }
-      .overlay button {
-        background-color: #00CED1;
-        color: #000000;
-        border: none;
-        padding: 10px 20px;
-        font-size: 1em;
-        cursor: pointer;
-        border-radius: 5px;
-      }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #d1ff00;
+            background-color: #f0f0f0;
+        }
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://sneakonbrowsers.github.io/Browser%20(3).png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .banner-text {
+            position: absolute;
+            top: 20px;
+            font-size: 2vw; /* Reduced font size /
+            font-weight: bold;
+            text-transform: uppercase;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px; / Reduced padding */
+        }
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2vw;
+        }
+        .buttons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        .button {
+            background-color: #d1ff00;
+            color: #000;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.5vw;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2vw;
+            cursor: pointer;
+            color: #d1ff00;
+            z-index: 1;
+        }
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .menu-content a {
+            color: #d1ff00;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+        .menu-content a:hover {
+            background-color: #555;
+        }
     </style>
-  </head>
-  <body>
-    <div class="overlay">
-      <div class="overlay-content">
-        <p>We have moved to a new URL</p>
-        <button onclick="window.location.href='https://sneakonbrowsers.github.io'">Go</button>
-      </div>
+</head>
+<body class="no-outline">
+    <div class="banner">
+        <div class="header">Sneakon</div>
+        <div class="banner-text">Imaginated, Created</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="menu-content" id="menuContent">
+            <a href="https://sneakonbrowsers.github.io/sneakonkids">Sneakon Kids</a>
+            <a href="https://sneakonbrowsers.github.io/sneakonedu">Sneakon EDU</a>
+        </div>
+        <div class="buttons">
+            <a href="/download" class="button">Download Now!</a>
+            <a href="/socials" class="button">Socials</a>
+        </div>
     </div>
-    <a href="/sneakon" class="top-right">X</a>
-    <h1>Social Media</h1>
-    <a href="https://reddit.com/r/sneakon">Reddit</a><br>
-    <a href="https://discord.gg/vGWcC4hYxC">Discord</a><br>
-    <a href="https://youtube.com/@SneakonSearch">Youtube</a>
-  </body>
+    <script>
+        function toggleMenu() {
+            var menuContent = document.getElementById('menuContent');
+            if (menuContent.style.display === 'none' || menuContent.style.display === '') {
+                menuContent.style.display = 'block';
+            } else {
+                menuContent.style.display = 'none';
+            }
+        }
+    </script>
+</body>
 </html>
